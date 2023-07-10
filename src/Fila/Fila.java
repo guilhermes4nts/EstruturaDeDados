@@ -15,7 +15,7 @@ public class Fila<T> implements IFila<T> {
 	
 	public void enfileirar(T elemento) throws Exception {
 		
-		if (this.tamanho == 10) {
+		if (filaCheia()) {
 			throw new Exception ("Fila Cheia");
 		}
 			
@@ -41,7 +41,7 @@ public class Fila<T> implements IFila<T> {
 	}
 	
 	public void desenfileirar() throws Exception {
-		if (this.tamanho == 0) {
+		if (filaVazia()) {
 			throw new Exception ("Fila Vazia");
 		}
 		
@@ -60,6 +60,22 @@ public class Fila<T> implements IFila<T> {
 		this.tamanho--;
 		
 	}
-	
-		
+
+	@Override
+	public boolean filaCheia() {
+		if (this.tamanho == 10){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean filaVazia() {
+		if (this.tamanho == 0){
+			return true;
+		}
+		return false;
+	}
+
+
 }
