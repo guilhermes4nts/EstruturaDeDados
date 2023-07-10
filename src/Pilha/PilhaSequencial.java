@@ -5,6 +5,7 @@ public class PilhaSequencial<T> implements IPilha<T> {
     private T[] pilha;
     private int inicio;
     private int fim;
+
     public PilhaSequencial(int tamanho){
         this.pilha = (T[]) new Object[tamanho];
         this.fim = 0;
